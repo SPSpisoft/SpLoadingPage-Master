@@ -12,6 +12,7 @@
         <attr name="lv_fail_btn_text" format="string" />
         <attr name="lv_fail_btn_color" format="color" />
         <attr name="lv_fail_btn_text_color" format="color" />
+<!--        <attr name="lv_status" format="integer" />-->
 
         <attr name="lv_ModeStatus" format="enum">
             <enum name="STATUS_FAIL" value="-1"/>

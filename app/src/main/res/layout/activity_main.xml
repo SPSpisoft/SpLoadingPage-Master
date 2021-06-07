@@ -18,6 +18,7 @@
     <com.spisoft.sploadingpage.SPLoadingPage
         android:id="@+id/spLoadingPage"
         app:lv_kitColor="@android:color/holo_red_light"
+        app:lv_ModeStatus="STATUS_NORMAL"
         app:lv_titleText="@string/app_name"
         app:lv_fail_btn_text=" سعی کن دوباره"
         app:lv_fail_title="نشد"

@@ -28,6 +28,7 @@ public class SPLoadingPage extends RelativeLayout {
     private MaterialButton vBtnRetry;
     private View viewBase;
     private OnRetryClickListener mRetryClickListener;
+    private int defaultStatus = 1;
 
     public SPLoadingPage(Context context) {
         super(context);
@@ -71,12 +72,18 @@ public class SPLoadingPage extends RelativeLayout {
             if(drawable != null)
                 viewBase.setBackground(drawable);
             spinKitView.setColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_kitColor, Color.GRAY));
-            vIconRetry.setImageResource(typedArray.getResourceId(R.styleable.SPLoadingPage_lv_fail_icon, R.drawable.ic_baseline_warning_24));
-            vFailText.setText(typedArray.getString(R.styleable.SPLoadingPage_lv_fail_title));
+            vIconRetry.setImageResource(typedArray.getResourceId(R.styleable.SPLoadingPage_lv_fail_icon, R.drawable.ic_baseline_sync_problem_24));
+            String failTitle = typedArray.getString(R.styleable.SPLoadingPage_lv_fail_title);
+            if(failTitle != null)
+                vFailText.setText(failTitle);
             vFailText.setTextColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_title_color, Color.GRAY));
-            vBtnRetry.setText(typedArray.getString(R.styleable.SPLoadingPage_lv_fail_btn_text));
+            String failBtnText = typedArray.getString(R.styleable.SPLoadingPage_lv_fail_btn_text);
+            if(failBtnText != null)
+                vBtnRetry.setText(failBtnText);
             vBtnRetry.setTextColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_text_color, Color.WHITE));
             vBtnRetry.setBackgroundColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_color, Color.BLUE));
+
+            defaultStatus = typedArray.getInt(R.styleable.SPLoadingPage_lv_ModeStatus, 1);
             typedArray.recycle();
         }
 
@@ -86,6 +93,8 @@ public class SPLoadingPage extends RelativeLayout {
                 if(mRetryClickListener != null) mRetryClickListener.onEvent();
             }
         });
+
+        SetStatus(defaultStatus);
 //        invalidate();
     }
 

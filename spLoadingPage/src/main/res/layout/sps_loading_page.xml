@@ -26,7 +26,7 @@
 
         <ImageView
             android:id="@+id/icnRetry"
-            android:src="@drawable/ic_baseline_warning_24"
+            android:src="@drawable/ic_baseline_sync_problem_24"
             android:layout_marginBottom="20dp"
             android:layout_above="@+id/txtRetry"
             android:layout_centerHorizontal="true"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:text="FAIL RETRY"
+            android:text="@string/fail"
             android:textColor="@android:color/holo_red_light"
             android:textSize="20sp"
             android:id="@+id/txtRetry"
@@ -56,9 +56,8 @@
                 android:id="@+id/btnRetry"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="RETRY"
+                android:text="@string/retry"
                 android:layout_width="wrap_content"
-                app:strokeColor="@android:color/holo_blue_dark"
                 android:layout_height="wrap_content"/>
 
 <!--            <com.google.android.material.button.MaterialButton-->
