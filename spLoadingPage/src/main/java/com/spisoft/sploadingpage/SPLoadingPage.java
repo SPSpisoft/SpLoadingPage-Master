@@ -25,7 +25,7 @@ public class SPLoadingPage extends RelativeLayout {
     private int mKitColor = Color.GRAY;
     private ImageView vIconRetry;
     private TextView vFailText;
-    private MaterialButton vBtnRetry;
+    private TextView vBtnRetry;
     private View viewBase;
     private OnRetryClickListener mRetryClickListener;
     private int defaultStatus = 1;
@@ -80,8 +80,8 @@ public class SPLoadingPage extends RelativeLayout {
             String failBtnText = typedArray.getString(R.styleable.SPLoadingPage_lv_fail_btn_text);
             if(failBtnText != null)
                 vBtnRetry.setText(failBtnText);
-            vBtnRetry.setTextColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_text_color, Color.WHITE));
-            vBtnRetry.setBackgroundColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_color, Color.BLUE));
+            vBtnRetry.setTextColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_text_color, Color.GRAY));
+//            vBtnRetry.setBackgroundColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_color, Color.BLUE));
 
             defaultStatus = typedArray.getInt(R.styleable.SPLoadingPage_lv_ModeStatus, 1);
             typedArray.recycle();
