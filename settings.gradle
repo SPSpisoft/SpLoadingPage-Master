@@ -1,0 +1,3 @@
+include ':spLoadingPage'
+include ':app'
+rootProject.name = "SpLoadingPage-Master"

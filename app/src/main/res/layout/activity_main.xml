@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.spisoft.sploadingpage.SPLoadingPage
+        android:id="@+id/spLoadingPage"
+        app:lv_kitColor="@android:color/holo_red_light"
+        app:lv_titleText="@string/app_name"
+        app:lv_fail_btn_text=" سعی کن دوباره"
+        app:lv_fail_title="نشد"
+        app:lv_fail_title_color="@android:color/holo_orange_dark"
+        app:lv_fail_icon="@mipmap/ic_launcher"
+        app:lv_fail_btn_color="@color/design_default_color_error"
+        app:lv_fail_btn_text_color="@android:color/holo_orange_dark"
+        android:colorBackground="@color/black"
+        android:background="@android:drawable/dialog_holo_dark_frame"
+        android:typeface="serif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

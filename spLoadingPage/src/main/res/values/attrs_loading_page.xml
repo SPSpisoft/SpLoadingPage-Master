@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SPLoadingPage">
+        <attr name="lv_titleText" format="string" />
+        <attr name="android:colorBackground" />
+        <attr name="android:background" />
+        <attr name="lv_kitColor" format="color" />
+        <attr name="lv_fail_title" format="string" />
+        <attr name="lv_fail_title_color" format="color" />
+        <attr name="android:typeface" />
+        <attr name="lv_fail_icon" format="reference" />
+        <attr name="lv_fail_btn_text" format="string" />
+        <attr name="lv_fail_btn_color" format="color" />
+        <attr name="lv_fail_btn_text_color" format="color" />
+
+        <attr name="lv_ModeStatus" format="enum">
+            <enum name="STATUS_FAIL" value="-1"/>
+            <enum name="STATUS_NORMAL" value="0"/>
+            <enum name="STATUS_SUCCESS" value="1"/>
+        </attr>
+
+<!--        <attr name="cv_subtitleText" format="string" />-->
+<!--        <attr name="cv_titleSize" format="dimension" />-->
+<!--        <attr name="cv_subtitleSize" format="dimension" />-->
+<!--        <attr name="cv_titleSubtitleSpace" format="float" />-->
+<!--        <attr name="cv_strokeWidthSize" format="float" />-->
+<!--        <attr name="cv_fillRadius" format="float" />-->
+<!--        <attr name="cv_titleColor" format="color" />-->
+<!--        <attr name="cv_subtitleColor" format="color" />-->
+<!--        <attr name="cv_fillColor" format="color" />-->
+<!--        <attr name="cv_strokeColorValue" format="color" />-->
+<!--        <attr name="cv_backgroundColorValue" format="color" />-->
+<!--        <attr name="cv_icon" format="reference" />-->
+<!--        <attr name="cv_iconColor" format="color" />-->
+<!--        <attr name="cv_icon_margin" format="dimension" />-->
+<!--        <attr name="cv_size" format="integer" />-->
+    </declare-styleable>
+</resources>
