@@ -28,7 +28,7 @@ public class SPLoadingPage extends RelativeLayout {
     private TextView vBtnRetry;
     private View viewBase;
     private OnRetryClickListener mRetryClickListener;
-//    private int defaultStatus = SPL_Status.Loading.code;
+    private SPL_Status defaultStatus = SPL_Status.Loading;
 
     public enum SPL_Status {
         Loading(0),
@@ -98,7 +98,17 @@ public class SPLoadingPage extends RelativeLayout {
             vBtnRetry.setTextColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_text_color, Color.GRAY));
 //            vBtnRetry.setBackgroundColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_color, Color.BLUE));
 
-//            defaultStatus = typedArray.getInt(R.styleable.SPLoadingPage_lv_ModeStatus, SPL_Status.Loading.code);
+            switch (typedArray.getInt(R.styleable.SPLoadingPage_lv_ModeStatus, SPL_Status.Loading.code)){
+                case 0:
+                    defaultStatus = SPL_Status.Loading;
+                    break;
+                default:
+                    defaultStatus = SPL_Status.Success;
+                    break;
+                case 2:
+                    defaultStatus = SPL_Status.Fail;
+                    break;
+            }
             typedArray.recycle();
         }
 
@@ -109,7 +119,7 @@ public class SPLoadingPage extends RelativeLayout {
             }
         });
 
-        SetStatus(SPL_Status.Loading);
+        SetStatus(defaultStatus);
 //        invalidate();
     }
 
