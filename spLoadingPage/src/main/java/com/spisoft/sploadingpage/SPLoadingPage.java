@@ -28,7 +28,22 @@ public class SPLoadingPage extends RelativeLayout {
     private TextView vBtnRetry;
     private View viewBase;
     private OnRetryClickListener mRetryClickListener;
-    private int defaultStatus = 1;
+//    private int defaultStatus = SPL_Status.Loading.code;
+
+    public enum SPL_Status {
+        Loading(0),
+        Success(1),
+        Fail(2);
+        private final int code;
+
+        SPL_Status(int code) {
+            this.code = code;
+        }
+
+        public int Code() {
+            return this.code;
+        }
+    }
 
     public SPLoadingPage(Context context) {
         super(context);
@@ -83,7 +98,7 @@ public class SPLoadingPage extends RelativeLayout {
             vBtnRetry.setTextColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_text_color, Color.GRAY));
 //            vBtnRetry.setBackgroundColor(typedArray.getColor(R.styleable.SPLoadingPage_lv_fail_btn_color, Color.BLUE));
 
-            defaultStatus = typedArray.getInt(R.styleable.SPLoadingPage_lv_ModeStatus, 1);
+//            defaultStatus = typedArray.getInt(R.styleable.SPLoadingPage_lv_ModeStatus, SPL_Status.Loading.code);
             typedArray.recycle();
         }
 
@@ -94,21 +109,21 @@ public class SPLoadingPage extends RelativeLayout {
             }
         });
 
-        SetStatus(defaultStatus);
+        SetStatus(SPL_Status.Loading);
 //        invalidate();
     }
 
-    public void SetStatus(int modeStatus) {
+    public void SetStatus(SPL_Status modeStatus) {
         switch (modeStatus){
-            case 0:
+            case Loading:
                 viewFail.setVisibility(GONE);
                 spinKitView.setVisibility(VISIBLE);
                 break;
-            case -1:
+            case Fail:
                 viewFail.setVisibility(VISIBLE);
                 spinKitView.setVisibility(GONE);
                 break;
-            case 1:
+            case Success:
                 viewFail.setVisibility(GONE);
                 spinKitView.setVisibility(VISIBLE);
                 this.setVisibility(GONE);

@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
         vLoadingPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vLoadingPage.SetStatus(1);
+                vLoadingPage.SetStatus(SPLoadingPage.SPL_Status.Success);
             }
         });
         vLoadingPage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                vLoadingPage.SetStatus(-1);
+                vLoadingPage.SetStatus(SPLoadingPage.SPL_Status.Fail);
                 return true;
             }
         });
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         vLoadingPage.setOnRetryClickListener(new SPLoadingPage.OnRetryClickListener() {
             @Override
             public void onEvent() {
-                vLoadingPage.SetStatus(0);
+                vLoadingPage.SetStatus(SPLoadingPage.SPL_Status.Loading);
             }
         });
     }
